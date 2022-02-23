@@ -1,0 +1,70 @@
+/* hides the native tabs */
+/*#TabsToolbar {
+  visibility: collapse;
+}*/
+
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
+
+tab-item {
+  --tab-margin-left: 30px;
+  --tab-margin-right: 30px;
+}
+
+/* Less visible tab dividers. 
+   A black border with a very low alpha slightly darkens any color. */
+tab-item {
+  border: solid 1px #00000012; 
+}
+
+/* As little space before the tab name as possible.
+   The fold/unfold icon is not affected. */
+tab-item:not(.pinned) {
+  padding-left: 0px !important; /* !important is required when there are enough tabs to cause a scrollbar */
+}
+
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+tab-item.active {
+  height: 39px !important;
+}
+tab-item.active > .background {
+  background-color: steelblue;
+}
+tab-item.active .label-content {
+  font-weight: bold;
+  font-size: 14px;
+}
+tab-item.active tab-twisty,
+tab-item.active .label-content,
+tab-item.active tab-counter {
+  color: #fff;
+}
+
+#titlebar {
+  appearance: none !important;
+  height: 0px;
+}
+
+#titlebar > #toolbar-menubar {
+  margin-top: 0px;
+}
+
+#TabsToolbar {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+#TabsToolbar > .titlebar-buttonbox-container {
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 0px;
+}
+
