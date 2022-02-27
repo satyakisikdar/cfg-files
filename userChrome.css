@@ -68,3 +68,46 @@ tab-item.active tab-counter {
   left: 0px;
 }
 
+
+tab-item {
+  --tab-margin-left: 0px;
+  --tab-margin-right: 0px;
+  border: solid 0.1px #00000012; 
+  font-size:11px;
+  height:35px!important;
+}
+
+/* Less visible tab dividers. 
+   A black border with a very low alpha slightly darkens any color. */
+
+
+/* As little space before the tab name as possible.
+   The fold/unfold icon is not affected. */
+tab-item:not(.pinned) {
+  padding-left: 0px !important; /* !important is required when there are enough tabs to cause a scrollbar */
+}
+
+tab-item.active {
+  height: 30px !important;
+}
+tab-item.active > .background {
+  background-color: steelblue;
+}
+tab-item.active .label-content {
+  font-weight: bold;
+  font-size: 12px;
+  color: silver; 
+}
+
+#tabbar { scrollbar-width: none; }
+
+.newtab-button-box {
+  display: none;
+}
+#tabbar {
+  bottom: 0 !important; /* Eliminate dead space on bottom */
+}
+
+#tabbar tab-item tab-item-substance:not(:hover) tab-closebox {
+  display: none;
+}
